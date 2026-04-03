@@ -183,7 +183,7 @@ export default function App() {
         <StarDisplay stars={w.stars} x={starX} y={starY} size={starSize} />
         <text x={w.x} y={starY - 14/zoom} textAnchor="middle" fontSize={10/zoom} fill="#888780" style={{ pointerEvents:"none" }}>{w.stars.toFixed(1)}⭐ · {pct(w.acceptance)} acc</text>
         {wScore && <text x={w.x} y={starY - 26/zoom} textAnchor="middle" fontSize={10/zoom} fontWeight="500" fill="#534AB7" style={{ pointerEvents:"none" }}>score {wScore}</text>}
-        {w.offeredPrice != null && <text x={w.x} y={w.y-NR-52/zoom} textAnchor="middle" fontSize={13/zoom} fontWeight="500" fill="#27500A" style={{ pointerEvents:"none" }}>{fmt(w.offeredPrice)}</text>}
+        {w.offeredPrice != null && <text x={w.x} y={starY - 40/zoom} textAnchor="middle" fontSize={13/zoom} fontWeight="500" fill="#27500A" style={{ pointerEvents:"none" }}>{fmt(w.offeredPrice)}</text>}
         {on && btns.map((btn,i) => {
           const bw=btn.w/zoom, cx=bx+bw/2;
           const el=(<g key={i} style={{ cursor:"pointer" }} onClick={btn.fn} onMouseEnter={()=>hoverEnter(w.id)}><rect x={bx} y={by} width={bw} height={bh} rx={br} fill={btn.bg}/><text x={cx} y={by+bh*0.62} textAnchor="middle" fontSize={bfs} fill={btn.tc} fontWeight="500" style={{ pointerEvents:"none" }}>{btn.label}</text></g>);
